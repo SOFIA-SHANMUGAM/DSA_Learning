@@ -1,0 +1,30 @@
+import java.util.*;
+class Node{
+    Node next;
+    int data;
+    Node(int data){
+        this.data = data;
+        this.next = null;
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    Node dummy = new Node(-1);
+	    Node tail = dummy;
+	    for(int i=0; i<n; i++){
+	        int element = sc.nextInt();
+	        Node newnode = new Node(element);
+	        tail.next = newnode;
+	        tail = tail.next;
+	    }
+	    int count = 0;
+	    while(dummy.next != null){
+	        count++;
+	        dummy.next = dummy.next.next;
+	    }
+	    System.out.print(count);
+	}
+}
