@@ -1,1 +1,27 @@
-
+import java.util.*;
+class Node {	
+    Node next;	
+    int data;	
+    Node(int data) {		
+        this.data = data;		
+        this.next = null;	
+    }
+} 
+public class Main {	
+    public static void main(String[] args) {		
+        Scanner sc = new Scanner(System.in);		
+        int n = sc.nextInt();		
+        Node dummy = new Node(-1);		
+        Node tail = dummy;		
+        for(int i=0; i<n; i++) {			
+            int x = sc.nextInt();			
+            Node newnode = new Node(x);			
+            tail.next = newnode;			
+            tail = tail.next;		
+        }		
+        while(dummy.next != null){
+            System.out.print(dummy.next.data+" ");
+            dummy.next = dummy.next.next;
+        }
+    }
+}
