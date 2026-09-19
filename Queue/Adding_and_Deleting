@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		Queue<Integer> q = new LinkedList<>();
+		for(int i=0; i<n; i++){
+		    int x = sc.nextInt();
+		    q.offer(x);//offer() and add() do the same
+		}
+		q.poll();//remove() and poll() do the same
+		System.out.print(q);
+	}
+}
